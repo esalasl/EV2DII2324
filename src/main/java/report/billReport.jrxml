@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.6.final using JasperReports Library version 6.20.6-5c96b6aa8a39ac1dc6b6bea4b81168e16dd39231  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Coffee" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ced95029-b569-4027-895c-af2843a4e088">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="title" class="java.lang.String"/>
+	<parameter name="typeColumn" class="java.lang.String"/>
+	<parameter name="priceColumn" class="java.lang.String"/>
+	<parameter name="total" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="type" class="java.lang.String"/>
+	<field name="price" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="554" height="30" uuid="8c9aeec6-37bb-4487-a858-0fe83e8da0c0"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{title}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="10" width="278" height="30" uuid="2c406d5d-19a2-4bc7-bb04-589772a93b7c"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{typeColumn}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="10" width="274" height="30" uuid="0890f76a-1420-4cb0-aaa3-979f546c0be9"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{priceColumn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="30" uuid="a98495d8-3c8d-4fa0-81f5-30c3efc2f766"/>
+				<textField>
+					<reportElement x="0" y="0" width="280" height="30" uuid="5e2af28a-c8cd-4662-a1f0-1ea3e04ee190"/>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{type}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="280" y="0" width="274" height="30" uuid="877eb431-6752-4bb1-9a44-d9b829c4d069"/>
+					<textElement textAlignment="Center">
+						<font size="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="279" y="0" width="274" height="30" uuid="efc19bce-89ac-41e7-8449-5948ae0a0540"/>
+				<textElement textAlignment="Center">
+					<font size="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
